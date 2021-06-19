@@ -4,31 +4,23 @@ using namespace std;
 int main(){
   int n;
   cin >> n ;
-  vector<int> a(n), b(n);
+  vector<int> a(n);
+  map<int,int> mp;
+  long long ans = 0;
+  
   for(int i=0; i<n; i++){
     cin >> a.at(i);
-    b.at(i) = a.at(i);
+    mp[a.at(i)] += 1;
   }
 
-  int ans = 0;
-  sort(b.begin(),b.end());
-  
-  int cnt = 0;
-  bool f = false;
-
-  for(int i=0; i<n-1; i++){
-    if(b.at(i) == b.at(i+1)){
-      cnt += 1;
-      f = true;
-    } else if(f){
-      cnt += 1;
-      f = false;
-    }
+  int n_i;
+  for(int i=0; i<n; i++){
+    n_i = n-i;
+    mp.at(a.at(i)) -= 1;
+    ans += n_i-1 - mp.at(a.at(i));
   }
-  if(f) cnt += 1;
-
-  ans = n*(n-1)/2 - cnt;
-	   
+    
   cout << ans << endl;
+  
   return 0;
 }
