@@ -1,7 +1,7 @@
 * AtCoder submit まとめ
 
 ** abc213 
-*** [[https://atcoder.jp/contests/abc213/tasks/abc213_a][A問題]]
+*** A問題 https://atcoder.jp/contests/abc213/tasks/abc213_a
 [abc213/a.cpp](/abc213/a.cpp)
 
 両辺に対してAをxorすると，出力は~A xor B~で良い．
