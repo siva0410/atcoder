@@ -4,14 +4,14 @@
 *** A問題
     問題: https://atcoder.jp/contests/abc213/tasks/abc213_a
 
-    コード: [[abc213/a.cpp]]
+    提出: [[abc213/a.cpp]]
 
     両辺に対してAをxorすると，出力は A xor B，つまり ~A^B~ で良い．
 
 *** B問題
     問題: https://atcoder.jp/contests/abc213/tasks/abc213_b
 
-    コード: [[abc213/b.cpp]]
+    提出: [[abc213/b.cpp]]
 
     一番大きい値と二番めに大きい値を保持してforを回す．
     pairに位置を持たせて入力でsortして下から2番目の位置の参照でも解ける．
@@ -19,7 +19,7 @@
 *** C問題
     問題: https://atcoder.jp/contests/abc213/tasks/abc213_c
 
-    コード: [[abc213/c.cpp]]
+    提出: [[abc213/c.cpp]]
     
     力技で隣の数との差分の和を引いていくループを実装して計算したけど
     この問題は座標圧縮という典型アルゴリズムそのものらしい．
@@ -36,3 +36,16 @@
     map [[abc213/c_map.cpp]]
     
     sort [[abc213/c_sort.cpp]]
+
+*** D問題
+    問題: https://atcoder.jp/contests/abc213/tasks/abc213_d
+
+    提出: [[abc213/d.cpp]]
+    
+    深さ優先探索だ！！！となったけど実装がさっぱりだったので下記の参考サイトの
+    DFSの実装を参考に書いたら通った．なんかsortするときのループの回数が一回足りてなくて
+    ハマった…．
+
+    DFS解説
+
+    https://qiita.com/drken/items/4a7869c5e304883f539b
