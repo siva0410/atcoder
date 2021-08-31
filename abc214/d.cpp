@@ -1,41 +1,65 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <tuple>
+#include <algorithm>
+
 using namespace std;
 
-struct Node {
-  int child[2] = {0};
-  int weigh = 0;
+struct UnionFind {
+  vector<int> par, siz;
+  
+  UnionFind(int n): par(n, -1), siz(n, 1) { }
+  
+  int root(int x){
+    if(par[x] == -1) return x;
+    else return par[x] = root(par[x]);
+  }
+
+  bool issame(int x, int y){
+    return root(x) == root(y);
+  }
+
+  bool unite(int x, int y){
+    x = root(x);
+    y = root(y);
+    if(x == y) return false;
+    if(siz[x] < siz[y]) swap(x, y);
+    par[y] = x;
+    siz[x] += siz[y];
+    return true;
+  }
+
+  int size(int x){
+    return siz[root(x)];
+  }
 };
 
-vector<Node> tree(100000);
-
-int rec(Node t){
-  int ans=0;
-  if(t.child[0] + t.child[1] == 0)
-    return t.weigh;
-  if(t.child[0] != 0)
-    ans += rec(tree.at(t.child[0]));
-  if(t.child[1] != 0)
-    ans += rec(tree.at(t.child[1]));
-
-  return ans;
-}
 
 int main(){
   int n;
   cin >> n;
-  // vector<Node> tree(n);
-  int a, b, w;
+  vector<tuple<int, int, int>> edges;
+  int u, v, w;
+  
   for(int i=0; i<n-1; i++){
-    cin >> a >> b >> w;
-    if(tree.at(a-1).child[0] != 0)
-      tree.at(a-1).child[0] = b;
-    else tree.at(a-1).child[1] = b;
-    tree.at(a-1).weigh = w;
-    cout << tree.at(a-1).child[0] << endl;
+    cin >> u >> v >> w;
+    u--;
+    v--;
+    edges.push_back(make_tuple(w, u, v));
   }
 
-  cout << rec(tree.at(0)) << endl;
+  sort(edges.begin(), edges.end());
+
+  UnionFind uf(n);
+  long long ans = 0;
   
+  for(auto edge: edges){
+    tie(w, u, v) = edge;
+    ans += 1LL * w * uf.size(u) * uf.size(v);
+    uf.unite(u, v);
+  }
+
+  cout << ans << endl;
+
   return 0;
 }
-  

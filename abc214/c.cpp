@@ -18,7 +18,6 @@ int main(){
     if(t.at(i) < now)
       time.at(i) = t.at(i);
     else time.at(i) = now;
-    // time.at(i) = min(time.at(i), now); 
     now = time.at(i) + s.at(i);
   }
   

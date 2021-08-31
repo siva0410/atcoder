@@ -1,5 +1,45 @@
 * AtCoder submit まとめ
 
+** AtCoder Beginner Contest 214
+*** A問題
+    問題: https://atcoder.jp/contests/abc213/tasks/abc214_a
+
+    提出: [[abc214/a.cpp]]
+
+    素直に条件分岐．
+    
+*** B問題
+    問題: https://atcoder.jp/contests/abc213/tasks/abc214_b
+
+    提出: [[abc214/b.cpp]]
+
+    3重ループで条件を満たすときのみans++．
+
+*** C問題
+    問題: https://atcoder.jp/contests/abc213/tasks/abc214_c
+
+    提出: [[abc214/c.cpp]]
+
+    直接宝石を渡された時間と，前の人からもらった時間を比較して早いほうの時間を採用した．
+    途中で直接渡された場合，2周しないと更新しきれないので2回同じ処理を回してAC．
+    
+*** D問題
+    問題: https://atcoder.jp/contests/abc213/tasks/abc214_d
+
+    提出: [[abc214/d.cpp]]
+
+    解説見ながら解いた．大事なのは主客転倒をして重みwが計算された回数を数える方向にシフトすること．
+    小さいものから順番に数えつつUnion-Findでグループ化していけばいい感じで解けた．
+    Union-Findの実装はアルゴリズムとデータ構造（通称けんちょん本）を参考にした．
+
+    主客転倒について
+
+    https://physics0523.hatenablog.com/entry/2020/01/12/052513
+
+    解説
+
+    https://blog.hamayanhamayan.com/entry/2021/08/15/034729
+   
 ** AtCoder Beginner Contest 213
 *** A問題
     問題: https://atcoder.jp/contests/abc213/tasks/abc213_a
