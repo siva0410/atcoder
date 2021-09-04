@@ -1,5 +1,67 @@
 * AtCoder submit まとめ
+** AtCoder Beginner Contest 217
+*** A問題
+    問題: https://atcoder.jp/contests/abc217/tasks/abc217_a
 
+    提出: [[abc217/a.cpp]]
+
+    stringで大小比較．
+
+*** B問題
+    問題: https://atcoder.jp/contests/abc217/tasks/abc217_b
+
+    提出: [[abc217/b.cpp]]
+
+    何を血迷ったかset_differenceとか使おうとして沼ったけど普通にsetから入力をeraseするだけ．
+
+*** C問題
+    問題: https://atcoder.jp/contests/abc217/tasks/abc217_c
+
+    提出: [[abc217/c.cpp]]
+
+    入力と同じ大きさの箱を用意して入力の場所にカウント変数を入れてくだけ．
+
+*** D問題
+    問題: https://atcoder.jp/contests/abc217/tasks/abc217_d
+
+    提出: [[abc217/d.cpp]]
+
+    setに切れ目を格納してc=2のときにlower_boundで上とprev(*itr)でその下を取ってその差を出力する．
+
+** AtCoder Beginner Contest 215
+*** A問題
+    問題: https://atcoder.jp/contests/abc215/tasks/abc215_a
+
+    提出: [[abc215/a.cpp]]
+
+    `Hello,World!`と比較するだけ．
+
+*** B問題
+    問題: https://atcoder.jp/contests/abc215/tasks/abc215_b
+
+    提出: [[abc215/b.cpp]]
+
+    0になるまで2で割り続けるだけ．
+
+*** C問題
+    問題: https://atcoder.jp/contests/abc215/tasks/abc215_c
+
+    提出: [[abc215/c.cpp]]
+
+    入力をsortして，あとはnext_permutationで回しつつk番目で出力するだけ．
+    
+    next_permutation http://vivi.dyndns.org/tech/cpp/permutation
+
+*** D問題
+    問題: https://atcoder.jp/contests/abc215/tasks/abc215_d
+
+    提出: [[abc215/d.cpp]]
+    
+    コンテスト中に愚直にgcd実装してやったらTLEで死亡した．
+    エラトステネスの篩の容量でやるとうまく時間内に解ける．
+
+    とても参考になった https://qiita.com/drken/items/a14e9af0ca2d857dad23
+    
 ** AtCoder Beginner Contest 214
 *** A問題
     問題: https://atcoder.jp/contests/abc213/tasks/abc214_a
