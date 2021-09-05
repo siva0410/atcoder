@@ -27,6 +27,41 @@
     提出: [[abc217/d.cpp]]
 
     setに切れ目を格納してc=2のときにlower_boundで上とprev(*itr)でその下を取ってその差を出力する．
+    
+** AtCoder Beginner Contest 216
+*** A問題
+    問題: https://atcoder.jp/contests/abc217/tasks/abc216_a
+
+    提出: [[abc216/a.cpp]]
+
+    substrで前と後ろから文字列として数字を取得して処理した．もっとうまくやる方法がありそう．
+    
+*** B問題
+    問題: https://atcoder.jp/contests/abc217/tasks/abc216_b
+
+    提出: [[abc216/b.cpp]]
+
+    pairで名前を取ってきて，名前順にsort，前後で同じものがないか比較でおわり．
+
+*** C問題
+    問題: https://atcoder.jp/contests/abc217/tasks/abc216_c
+
+    提出: [[abc216/c.cpp]]
+
+    2で割れたら割って，無理だったら1ずつ引いていく．手順をメモしておいて最後に逆順に出力．
+
+*** D問題
+    問題: https://atcoder.jp/contests/abc217/tasks/abc216_d
+
+    提出: [[abc216/d.cpp]]
+
+    自力で実装したらTLEで死んだ．死んだやつはO(NM)になったけど，
+    うまいこと差分だけを考える方法で実装するとO(N+M)でいける．
+    
+    最初に走査したときに消せる組み合わせの場所をqueueに突っこんでおいて，
+    その後にloopでqueueの中身を1組ずつ消していき，次に出現する次の数について
+    いままで出現した場所を記録してるmapと比べて差分ごとに更新していく．
+    
 
 ** AtCoder Beginner Contest 215
 *** A問題
