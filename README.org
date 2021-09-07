@@ -186,3 +186,44 @@
     DFS解説
 
     https://qiita.com/drken/items/4a7869c5e304883f539b
+
+** AtCoder Beginner Contest 212
+*** A問題
+    問題: https://atcoder.jp/contests/abc213/tasks/abc212_a
+
+    提出: [[abc212/a.cpp]]
+
+    if文連打でおわり．
+
+*** B問題
+    問題: https://atcoder.jp/contests/abc213/tasks/abc212_b
+
+    提出: [[abc212/b.cpp]]
+
+    二つの処理を同時に処理しようとしたら沼ったのでリーダブルコードにも書いてある通り
+    複数のタスクは一つずつ実装しましょう．
+    flagで管理する形の問題は，デフォルトTrueでループの中などでFalseするのがみやすくてよい．
+    あと複数の処理でflag管理するときは別々の変数作って，最後にorなどで出力を制御すると
+    いいと学びました．(公式解説参照)
+    
+*** C問題
+    問題: https://atcoder.jp/contests/abc213/tasks/abc212_c
+
+    提出: [[abc212/c.cpp]]
+
+    どうみても愚直に2重ループ回してもまにあわないのでlower_boundで可能性のある2択まで
+    絞りこんで小さい方を採用する方法でループ回しておわり．
+    解説では，AとBの要素の大きさを比較することでO(N+M)でループ回してて感動した．
+
+*** D問題
+    問題: https://atcoder.jp/contests/abc213/tasks/abc212_d
+
+    提出: [[abc212/d.cpp]]
+
+    どうみてもヒープでなんとかなりそうなので，priority_queueを使って実装した．
+    どうしてもqueueの入口と出口で追加分の処理をしたかったので，
+    queueに突っ込む前に現在までの追加分を引いて，出すときにその時の追加分を足す処理
+    したらうまくいった．
+
+    
+    
