@@ -1,4 +1,58 @@
 * AtCoder submit まとめ
+** AtCoder Beginner Contest 219
+*** A問題
+    問題: https://atcoder.jp/contests/abc219/tasks/abc219_a
+
+    提出: [[abc219/a.cpp]]
+
+    そのまま場合分けしておわり．
+    
+*** B問題
+    問題: https://atcoder.jp/contests/abc219/tasks/abc219_b
+
+    提出: [[abc219/b.cpp]]
+
+    Tの文字列をループさせて，1，2，3で条件分岐してansに文字列を連結していくだけ．
+
+*** C問題
+    問題: https://atcoder.jp/contests/abc219/tasks/abc219_c
+
+    提出: [[abc219/c.cpp]]
+
+    通常のアルファベット順に置き換えてsortしてから，元の順番に戻した．
+    最初，数値に置き換えて文字列にしようとしたけど，2桁のものがでてくるからダメかと思って
+    方向転換した．けどよく考えれば全然それでいけてたし，文字列じゃなくてただのvector<int>でとっても
+    よかったかも．
+
+*** D問題
+    問題: https://atcoder.jp/contests/abc219/tasks/abc219_d
+
+    提出: [[abc219/d.cpp]]
+
+    DPだとわかったけど実装できなかったので解説AC．
+    
+** AtCoder Beginner Contest 218
+*** A問題
+    問題: https://atcoder.jp/contests/abc218/tasks/abc218_a
+
+    提出: [[abc218/a.cpp]]
+
+    文字列の指定番目がoかxか調べて答えを出力．
+
+*** B問題
+    問題: https://atcoder.jp/contests/abc218/tasks/abc218_b
+
+    提出: [[abc218/b.cpp]]
+
+    char分だけ足してあげればよいので，'a'だけ入力に加えて出力．
+
+*** C問題
+    問題: https://atcoder.jp/contests/abc218/tasks/abc218_c
+
+    提出: [[abc218/c.cpp]]
+
+    取り組み中…
+    
 ** AtCoder Beginner Contest 217
 *** A問題
     問題: https://atcoder.jp/contests/abc217/tasks/abc217_a
@@ -30,28 +84,28 @@
     
 ** AtCoder Beginner Contest 216
 *** A問題
-    問題: https://atcoder.jp/contests/abc217/tasks/abc216_a
+    問題: https://atcoder.jp/contests/abc216/tasks/abc216_a
 
     提出: [[abc216/a.cpp]]
 
     substrで前と後ろから文字列として数字を取得して処理した．もっとうまくやる方法がありそう．
     
 *** B問題
-    問題: https://atcoder.jp/contests/abc217/tasks/abc216_b
+    問題: https://atcoder.jp/contests/abc216/tasks/abc216_b
 
     提出: [[abc216/b.cpp]]
 
     pairで名前を取ってきて，名前順にsort，前後で同じものがないか比較でおわり．
 
 *** C問題
-    問題: https://atcoder.jp/contests/abc217/tasks/abc216_c
+    問題: https://atcoder.jp/contests/abc216/tasks/abc216_c
 
     提出: [[abc216/c.cpp]]
 
     2で割れたら割って，無理だったら1ずつ引いていく．手順をメモしておいて最後に逆順に出力．
 
 *** D問題
-    問題: https://atcoder.jp/contests/abc217/tasks/abc216_d
+    問題: https://atcoder.jp/contests/abc216/tasks/abc216_d
 
     提出: [[abc216/d.cpp]]
 
@@ -99,21 +153,21 @@
     
 ** AtCoder Beginner Contest 214
 *** A問題
-    問題: https://atcoder.jp/contests/abc213/tasks/abc214_a
+    問題: https://atcoder.jp/contests/abc214/tasks/abc214_a
 
     提出: [[abc214/a.cpp]]
 
     素直に条件分岐．
     
 *** B問題
-    問題: https://atcoder.jp/contests/abc213/tasks/abc214_b
+    問題: https://atcoder.jp/contests/abc214/tasks/abc214_b
 
     提出: [[abc214/b.cpp]]
 
     3重ループで条件を満たすときのみans++．
 
 *** C問題
-    問題: https://atcoder.jp/contests/abc213/tasks/abc214_c
+    問題: https://atcoder.jp/contests/abc214/tasks/abc214_c
 
     提出: [[abc214/c.cpp]]
 
@@ -121,7 +175,7 @@
     途中で直接渡された場合，2周しないと更新しきれないので2回同じ処理を回してAC．
     
 *** D問題
-    問題: https://atcoder.jp/contests/abc213/tasks/abc214_d
+    問題: https://atcoder.jp/contests/abc214/tasks/abc214_d
 
     提出: [[abc214/d.cpp]]
 
@@ -189,14 +243,14 @@
 
 ** AtCoder Beginner Contest 212
 *** A問題
-    問題: https://atcoder.jp/contests/abc213/tasks/abc212_a
+    問題: https://atcoder.jp/contests/abc212/tasks/abc212_a
 
     提出: [[abc212/a.cpp]]
 
     if文連打でおわり．
 
 *** B問題
-    問題: https://atcoder.jp/contests/abc213/tasks/abc212_b
+    問題: https://atcoder.jp/contests/abc212/tasks/abc212_b
 
     提出: [[abc212/b.cpp]]
 
@@ -207,7 +261,7 @@
     いいと学びました．(公式解説参照)
     
 *** C問題
-    問題: https://atcoder.jp/contests/abc213/tasks/abc212_c
+    問題: https://atcoder.jp/contests/abc212/tasks/abc212_c
 
     提出: [[abc212/c.cpp]]
 
@@ -216,7 +270,7 @@
     解説では，AとBの要素の大きさを比較することでO(N+M)でループ回してて感動した．
 
 *** D問題
-    問題: https://atcoder.jp/contests/abc213/tasks/abc212_d
+    問題: https://atcoder.jp/contests/abc212/tasks/abc212_d
 
     提出: [[abc212/d.cpp]]
 
