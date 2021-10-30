@@ -1,55 +1,49 @@
-#include<bits/stdc++.h>
+#include<bits/stdc++.h>		
 
 using namespace std;
 
 int main(){
   int N, Q;
   cin >> N >> Q;
-  vector<deque<int>> deq_v;
-  map<int, int> mp;
-  int que_num = 1;
+  vector<int> front(N+1,0), back(N+1,0);
+  deque<int> ans;
   for(int i=0; i<Q; i++){
-    deque<int> tmp;
     int query, x, y;    
-    cin >> query;
-    if(query != 3){
-      cin >> x >> y;
-    } else {
-      cin >> x;
-    }
+    cin >> query;  
     if(query == 1){
-      if(mp[x] != 0){
-	deq_v.at(mp[x]-1).push_back(x);
-	mp[y] = mp[x];
-      } else if(mp[y] != 0){
-	deq_v.at(mp[y]-1).push_front(y);
-	mp[x] = mp[y];
-      } else {
-	tmp.push_back(x);
-	tmp.push_back(y);
-	deq_v.push_back(tmp);
-	mp[x] = que_num;
-	mp[y] = que_num;
-	que_num++;
-      }
+      cin >> x >> y;
+      back[x] = y;
+      front[y] = x;
     }    
     if(query == 2){
-      while(true){
-	int a = deq_v.at(mp[x]-1).front();
-	deq_v.at(mp[x]-1).pop_front();
-	tmp.push_back(a);
-	if(a == x){
-	  deq_v.push_back(tmp);
-	  mp[x] = que_num++;
-	  break;
-	}
-      }
+      cin >> x >> y;
+      back[x] = 0;
+      front[y] = 0;      
     }
     if(query == 3){
-      for(auto a: deq_v.at(mp[x]-1)){
+      cin >> x;
+      ans.push_back(x);
+      while(true){
+	if(front[x] == 0){
+	  break;
+	}
+	x = front[x];
+	ans.push_front(x);
+      }
+      x = ans.back();
+      while(true){
+	if(back[x] == 0){
+	  break;
+	}
+	x = back[x];
+	ans.push_back(x);
+      }
+      cout << ans.size() << " ";
+      for(auto a: ans){
 	cout << a << " ";
       }
       cout << '\n';
+      ans.clear();
     }
   }  
   return 0;

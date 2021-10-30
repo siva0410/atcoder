@@ -1,5 +1,66 @@
 * AtCoder submit まとめ
+** AtCoder Beginner Contest 225
+*** A問題
+    問題: https://atcoder.jp/contests/abc225/tasks/abc225_a
+
+    提出: [[abc225/a.cpp]]
+
+    一瞬難しそうに見えるけど，順列の総数は1，3，6の3通りしかないので
+    3つに場合分けして終了．
+    
+*** B問題
+    問題: https://atcoder.jp/contests/abc225/tasks/abc225_b
+
+    提出: [[abc225/b.cpp]]
+
+    スターになるときはどれかのノードにノード数-1個の辺が存在するので，
+    数えあげて最後にスターになっているか確認する．
+
+*** C問題
+    問題: https://atcoder.jp/contests/abc225/tasks/abc225_c
+
+    提出: [[abc225/c.cpp]]
+
+    実装はすぐ思いついたけど，端の処理を忘れててWA連打した．
+    端が7なら7+1はとなりにはない．
+    
+
+*** D問題
+    問題: https://atcoder.jp/contests/abc225/tasks/abc225_d
+
+    提出: [[abc225/d.cpp]]
+
+    連結リストを実装するときは，要素数分のvectorを準備するとよい．
+    (mapだと全ての操作にO(lon(n))かかるため)
+    解説の先に先頭まで移動してそこから後ろに辿るのが賢い．
+
 ** AtCoder Beginner Contest 219
+*** A問題
+    問題: https://atcoder.jp/contests/abc224/tasks/abc224_a
+
+    提出: [[abc224/a.cpp]]
+
+    後ろから2つ分substrで切り出して ~er~ かそれ以外で場合分けして出力．
+
+*** B問題
+    問題: https://atcoder.jp/contests/abc224/tasks/abc224_b
+
+    提出: [[abc224/b.cpp]]
+
+    難しそうなことが書いてあるが，書いてあることを愚直に実装するだけ．
+    毎回やらかすが，二重配列の引数を入れかえてout of rangeをしない．(自戒)
+
+*** C問題
+    問題: https://atcoder.jp/contests/abc224/tasks/abc224_c
+
+    提出: [[abc224/c.cpp]]
+
+    マイナスの面積ってなんだよって勝手に沼った．
+    外積を使う面積の計算は知っていたので純粋に国語力が足りませんでした．
+    ちゃんと問題と解答例を読む．(自戒)
+    
+** AtCoder Beginner Contest 219
+   
 *** A問題
     問題: https://atcoder.jp/contests/abc219/tasks/abc219_a
 
