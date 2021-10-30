@@ -34,7 +34,7 @@
     (mapだと全ての操作にO(lon(n))かかるため)
     解説の先に先頭まで移動してそこから後ろに辿るのが賢い．
 
-** AtCoder Beginner Contest 219
+** AtCoder Beginner Contest 224
 *** A問題
     問題: https://atcoder.jp/contests/abc224/tasks/abc224_a
 
@@ -184,7 +184,7 @@
 
     提出: [[abc215/a.cpp]]
 
-    `Hello,World!`と比較するだけ．
+    ~Hello,World!~ と比較するだけ．
 
 *** B問題
     問題: https://atcoder.jp/contests/abc215/tasks/abc215_b
@@ -199,7 +199,13 @@
     提出: [[abc215/c.cpp]]
 
     入力をsortして，あとはnext_permutationで回しつつk番目で出力するだけ．
-    
+#+BEGIN_SRC c++
+sort(s.begin(),s.end());
+  do {
+
+  } while(next_permutation(s.begin(), s.end()));
+#+END_SRC
+  
     next_permutation http://vivi.dyndns.org/tech/cpp/permutation
 
 *** D問題
@@ -243,6 +249,37 @@
     解説見ながら解いた．大事なのは主客転倒をして重みwが計算された回数を数える方向にシフトすること．
     小さいものから順番に数えつつUnion-Findでグループ化していけばいい感じで解けた．
     Union-Findの実装はアルゴリズムとデータ構造（通称けんちょん本）を参考にした．
+    
+#+BEGIN_SRC c++
+struct UnionFind {
+  vector<int> par, siz;
+  
+  UnionFind(int n): par(n, -1), siz(n, 1) { }
+  
+  int root(int x){
+    if(par[x] == -1) return x;
+    else return par[x] = root(par[x]);
+  }
+
+  bool issame(int x, int y){
+    return root(x) == root(y);
+  }
+
+  bool unite(int x, int y){
+    x = root(x);
+    y = root(y);
+    if(x == y) return false;
+    if(siz[x] < siz[y]) swap(x, y);
+    par[y] = x;
+    siz[x] += siz[y];
+    return true;
+  }
+
+  int size(int x){
+    return siz[root(x)];
+  }
+};
+#+END_SRC
 
     主客転倒について
 
@@ -297,6 +334,20 @@
     深さ優先探索だ！！！となったけど実装がさっぱりだったので下記の参考サイトの
     DFSの実装を参考に書いたら通った．なんかsortするときのループの回数が一回足りてなくて
     ハマった…．
+    
+#+BEGIN_SRC c++
+void dfs(const vector<vector<int>> &graph, vector<bool> &seen, int v){
+  seen[v] = true;
+  for(auto next_v: graph[v]){
+    if(seen[next_v]){
+      continue;
+    }
+    // 行きがけの処理
+    dfs(graph, seen, next_v);    
+  }
+  // 帰りがけの処理
+}
+#+END_SRC
 
     DFS解説
 
