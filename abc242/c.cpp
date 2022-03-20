@@ -2,36 +2,33 @@
 
 using namespace std;
 
-vector<vector<long long>> memo(1000000, vector<long long>(9, 0));
-
-long long fact(int n, int num){
-  long long ans = 0;  
-  if(num == 0 or num == 10){
-    return 0;
-  }
-  if(n == 1){
-    return 1;
-  }
-  if(memo.at(n-1).at(num-1) != 0){
-    ans = memo.at(n-1).at(num-1);
-  } else{
-    ans = fact(n-1,num-1)+fact(n-1,num)+fact(n-1,num+1);
-    memo.at(n-1).at(num-1) = ans;
-  }
-
-  return ans;
-}
-
 int main(){
-  long long n;
-  cin >> n;  
-  // vector<vector<long long>> memo(n, vector<long long>(9, 0));
-  
-  long long ans = 0;
-  for(int i=1; i<10; i++){
-    ans += fact(n,i);
+  int n;
+  cin >> n;
+
+  vector<vector<int>> dp(n, vector<int>(11,0));
+  for(int i=0; i<n; i++){
+    for(int j=1; j<10; j++){
+      dp[0][j] = 1;
+    }
   }
-  cout << ans%998244353 << endl;  
+
+  for(int i=1; i<n; i++){
+    for(int j=1; j<10; j++){
+      for(int k=j-1; k<=j+1; k++){
+	dp[i][j] += dp[i-1][k];
+	dp[i][j] %= 998244353;
+      }
+    }
+  }
+  
+  long long ans = 0;  
+  for(int i=1; i<10; i++){
+    ans += (long long)dp[n-1][i];
+    ans %= 998244353;
+  }
+  
+  cout << ans << endl;
   
   return 0;
 }
