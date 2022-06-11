@@ -1,4 +1,30 @@
 * AtCoder submit まとめ
+** AtCoder Beginner Contest 255
+*** A問題
+    問題: https://atcoder.jp/contests/abc255/tasks/abc255_a
+
+    提出: [[abc255/a.cpp]]
+
+    配列に4つつっこんで呼びだすだけ．
+    
+*** B問題
+    問題: https://atcoder.jp/contests/abc255/tasks/abc255_b
+
+    提出: [[abc255/b.cpp]]
+
+    明かりを照らす人から見た近い人間との距離の最大値を計算してたら死んだ．
+    逆に照らされる人から考えるとACした．たしかに．
+    
+*** C問題
+    問題: https://atcoder.jp/contests/abc255/tasks/abc255_c
+
+    提出: [[abc255/c.cpp]]
+
+    最初は普通に配列つくってlower_boundで実装したらbad_allocでそもそもコンパイルが通らなかった．
+    そもそ配列つくらなくてもいけそうだと思ってたけど実装する時間がなくて死んだ．
+    おわったあと考えてたけど，普通に二分探索でいけた．
+    
+  
 ** AtCoder Beginner Contest 225
 *** A問題
     問題: https://atcoder.jp/contests/abc225/tasks/abc225_a
