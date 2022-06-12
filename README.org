@@ -24,6 +24,36 @@
     そもそ配列つくらなくてもいけそうだと思ってたけど実装する時間がなくて死んだ．
     おわったあと考えてたけど，普通に二分探索でいけた．
     
+** AtCoder Beginner Contest 253
+*** A問題
+    問題: https://atcoder.jp/contests/abc253/tasks/abc253_a
+
+    提出: [[abc253/a.cpp]]
+
+    3つの数の中央値なので，3つを配列に入れてソートして前後で確認．
+    
+*** B問題
+    問題: https://atcoder.jp/contests/abc253/tasks/abc253_b
+
+    提出: [[abc253/b.cpp]]
+
+    ~o~ の文字の場所を数えて，最後にその二つの差分を出力．
+    
+*** C問題
+    問題: https://atcoder.jp/contests/abc253/tasks/abc253_c
+
+    提出: [[abc253/c.cpp]]
+
+    でっかいvectorで管理しようとしたら時間がかかりまくったのでmapでカウント，
+    setで最大値と最小値を管理した．
+    
+*** D問題
+    問題: https://atcoder.jp/contests/abc253/tasks/abc253_d
+
+    提出: [[abc253/d.cpp]]
+
+    gcd実装して，あとは普通のFizzBuzz
+  
   
 ** AtCoder Beginner Contest 225
 *** A問題
